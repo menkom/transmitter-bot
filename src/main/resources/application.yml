@@ -1,0 +1,14 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: ${APPLICATION_NAME:transmitter-bot}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env,prometheus
+telegram:
+  username: ${TELEGRAM_USERNAME:}
+  token: ${TELEGRAM_TOKEN:}
+  chatId: ${TELEGRAM_CHAT_ID:}
