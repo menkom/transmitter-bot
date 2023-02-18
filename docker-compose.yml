@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  application:
+    container_name: transmitter-tg-bot-app
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - "8090:8080"
+    volumes:
+      - ./log/:/opt/back/logs:rw
+    networks:
+      - transmitter-tg-bot
+
+networks:
+  transmitter-tg-bot:
